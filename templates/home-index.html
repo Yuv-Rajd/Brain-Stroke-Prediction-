@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Stroke Analysis</title>
+</head>
+<!--__________________________________style__________________________________-->
+<style>
+        body{
+            display: flex;
+            flex-direction:column;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+<!--            background-color:black;-->
+<!--            color:white;-->
+        }
+        .main{
+            width:70%;
+        }
+        h1{
+            font-family:"courier";
+        }
+        input{
+            background-color:black;
+        }
+        input{
+    color-scheme:dark;
+        }
+        div{
+        margin-top:1px;
+        }
+</style>
+<!--_________________________________header______________________________________-->
+<body>
+<div>
+    <h1 class="text-center">BRAIN STROKE PREDICTION MODEL</h1>
+</div>
+<!--____________________________________form___________________________________-->
+<div class="main">
+
+<form class="row g-3 dark" action="\" method="post">
+
+<div class="col-lg-12 col-md-6">
+    <label  class="form-label">Name</label>
+    <input type="text" name="name" class="form-control" required>
+</div>
+
+<div class="col-md-6">
+    <label  class="form-label">Age</label>
+    <input type="number" name="age" class="form-control" required>
+</div>
+
+<div class="col-md-6">
+    <label  class="form-label">Glucose Level</label>
+    <input name="glc" type="text" class="form-control" required>
+</div>
+
+<div class="col-md-3">
+    <label  class="form-label">BMI</label>
+    <input type="text" name="bmi" class="form-control" required>
+</div>
+
+<div class="col-md-3">
+    <label class="form-label">Gender</label>
+    <select name="gender" class="form-select dark">
+      <option value="0">Male</option>
+      <option value="1">Female</option>
+    </select>
+</div>
+
+<div class="col-md-3" >
+    <label  class="form-label">Married</label>
+    <select name="mrd" class="form-select">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select>
+</div>
+
+<div class="col-md-3" >
+    <label  class="form-label">Do You Smoke</label>
+    <select name="smk" class="form-select">
+        <option value="1">Formerly </option>
+        <option value="2">Never</option>
+        <option value="3">Regular</option>
+    </select>
+</div>
+
+<div class="col-md-3" >
+    <label  class="form-label">Resident Place</label>
+    <select name="res" class="form-select">
+        <option value="0">Rural</option>
+        <option value="1">Urban</option>
+    </select>
+</div>
+
+<div class="col-md-3" >
+    <label  class="form-label">Ever had hyperTension</label>
+    <select name="hyp"class="form-select" >
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select>
+</div>
+
+<div class="col-md-3" >
+    <label  class="form-label">Ever had Heart Disease</label>
+    <select name="hrt" class="form-select">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select>
+</div>
+
+<div class="col-md-3" >
+    <label  class="form-label">Working Type</label>
+    <select name="wrk" class="form-select">
+        <option value="0">Government</option>
+        <option value="1">Private</option>
+        <option value="2">Self Employed</option>
+    </select>
+</div>
+<!--________________________________check________________________________________-->
+
+<br>
+  <button type="submit" class="btn btn-primary">Check</button>
+</form>
+<!--________________________________result_____________________________________________-->
+<br>
+    {% if msg %}
+    <h4 class="text-danger">{{msg}}</h4>
+    {% endif %}
+</div>
+<!--___________________________________________________________________________-->
+</body>
+</html>
